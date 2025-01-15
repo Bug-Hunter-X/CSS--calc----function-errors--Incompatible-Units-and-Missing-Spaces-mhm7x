@@ -1,0 +1,15 @@
+The solution is to ensure you are using compatible units within `calc()` and to always include spaces around the operators (+, -, 
+*, /). For adding different units, consider using variables for a better approach and maintainability. 
+
+Example:
+```css
+:root {
+  --width-percentage: 50%;
+  --width-pixels: 100px;
+}
+
+.element {
+  width: calc(var(--width-percentage) + var(--width-pixels));
+}
+```
+This approach is more maintainable and readable. The variables can easily be adjusted without needing to modify the `calc()` expression.  Always ensure correct spacing around the operator: `width: calc(50% + 100px);` is correct, `width:calc(50%+100px);` is incorrect.
